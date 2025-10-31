@@ -25,4 +25,4 @@ http://localhost:8080/swagger-ui.html
 ## Prerrequisitos
 * Java 17 o superior
 * Maven (opcional, incluido wrapper)
-* API key de OpenWeather
+* API key de OpenWeather. *Para ejecutar el proyecto tienes que colocar tu API key en aplication.properties.*
