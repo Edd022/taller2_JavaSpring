@@ -130,7 +130,30 @@ GET (http://localhost:8080/api/pokemon/pikachu)
 | 1️⃣   | `abilities`    | `List<Object>` | Lista de habilidades                                    |
 | 2️⃣   | `ability`      | `Object`       | Objeto que contiene los detalles de la habilidad        |
 | 3️⃣   | `name`         | `String`       | Nombre de la habilidad específica                       |
+🔹 Endpoint Personalizado: /api/pokemon/personalizado/{name}
+Este endpoint fue creado como un reto adicional para generar una respuesta más sencilla y enfocada del consumo de la PokeAPI
+.
+En lugar de devolver toda la estructura completa del Pokémon, este endpoint retorna solo los datos más relevantes, para este ejercicio:
+Nombre del Pokémon
+Peso
+Lista de habilidades
+GET http://localhost:8080/api/pokemon/personalizado/{name}
+Ejemplo y solicitud:
+Solicitud en Postman o navegador:
+http://localhost:8080/api/pokemon/personalizado/pikachu
+🔸 Respuesta JSON:
+{
+    "name": "pikachu",
+    "weight": 60,
+    "abilities": [
+        "static",
+        "lightning-rod"
+    ]
+}
 
+Descripción
+
+Se utiliza el servicio PokeService para conectarse con la PokeAPI, obtiene los datos completos del Pokémon solicitado y los transforma en una respuesta personalizada mediante una nueva clase personalizada.
 
 ## 🧰 Tecnologías utilizadas
 
