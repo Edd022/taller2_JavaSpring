@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.acm.app.models.PokeResponse;
+import com.acm.app.models.PokeResponsePersonalizado;
 import com.acm.app.service.PokeService;
 
 import reactor.core.publisher.Mono;
@@ -22,6 +23,17 @@ public class PokeController {
 
 	public Mono<PokeResponse> getPokemon(@PathVariable String name){
 		return pokeService.getPokeByName(name);
+	}
+	@GetMapping("/personalizado/{name}")
+	public Mono<PokeResponsePersonalizado> getPersonalizadoPoke(@PathVariable String name) {
+	    return pokeService.getPokeByName(name)
+	        .map(poke -> new PokeResponsePersonalizado(
+	            poke.getName(),
+	            poke.getWeight(),
+	            poke.getAbilities().stream()
+	                .map(wrapper -> wrapper.getAbility().getName())
+	                .toList()
+	        ));
 	}
 	
 }
