@@ -1,6 +1,6 @@
 
 
-# PokeAPI Consumer 🐉
+# PokeAPI Consumer 
 
 Aplicación Spring Boot que consume la **[PokeAPI](https://pokeapi.co/)** utilizando **WebClient** de Spring WebFlux.
 Permite consultar la información básica de cualquier Pokémon por su nombre, mostrando datos como ID, peso, altura y habilidades.
@@ -120,6 +120,17 @@ GET (http://localhost:8080/api/pokemon/pikachu)
 ```
 
 ---
+
+| Nivel | Clave / Objeto | Tipo           | Descripción                                             |
+| ----- | -------------- | -------------- | ------------------------------------------------------- |
+| 1️⃣   | `id`           | `int`          | Identificador único del Pokémon                         |
+| 1️⃣   | `name`         | `String`       | Nombre del Pokémon                                      |
+| 1️⃣   | `height`       | `int`          | Altura del Pokémon                                      |
+| 1️⃣   | `weight`       | `int`          | Peso del Pokémon                                        |
+| 1️⃣   | `abilities`    | `List<Object>` | Lista de habilidades                                    |
+| 2️⃣   | `ability`      | `Object`       | Objeto que contiene los detalles de la habilidad        |
+| 3️⃣   | `name`         | `String`       | Nombre de la habilidad específica                       |
+
 
 ## 🧰 Tecnologías utilizadas
 
